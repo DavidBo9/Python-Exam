@@ -15,7 +15,7 @@ class Game(db.Model):
     name = db.Column(db.String(80), nullable=False)
     developer = db.Column(db.String(80), nullable=False)
     year = db.Column(db.Integer, nullable=False)
-    plataform = db.Column(db.String(80), nullable=False)
+    platform = db.Column(db.String(80), nullable=False)  # Corrected from 'plataform'
     classification = db.Column(db.String(80), nullable=False)
     status = db.Column(db.Boolean, default=False)
 
@@ -78,11 +78,9 @@ def delete_game(game_id):
     db.session.commit()
     return jsonify({'status':True}), 201
 
-
-if __name__ == '_main_':
+if __name__ == '__main__':  # Corrected from '_main_'
     with app.app_context():
         db.create_all()
         print("Tables created...")
 
     app.run(debug=True)
-
