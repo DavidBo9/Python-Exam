@@ -15,7 +15,7 @@ class Game(db.Model):
     name = db.Column(db.String(80), nullable=False)
     developer = db.Column(db.String(80), nullable=False)
     year = db.Column(db.Integer, nullable=False)
-    platform = db.Column(db.String(80), nullable=False)  # Corrected from 'plataform'
+    platform = db.Column(db.String(80), nullable=False)  
     classification = db.Column(db.String(80), nullable=False)
     status = db.Column(db.Boolean, default=False)
 
@@ -26,7 +26,7 @@ class Game(db.Model):
             'name': self.name,
             'developer': self.developer,
             "year": self.year,
-            "plataform": self.plataform,
+            "platform": self.platform,
             "classification": self.classification,
             "status": self.status
         }
